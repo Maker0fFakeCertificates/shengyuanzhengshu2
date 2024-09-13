@@ -23,4 +23,35 @@
     </div>
 </body>
 
+<script>
+    /*var oAjax = new XMLHttpRequest();
+    oAjax.open('POST', '', false);
+    oAjax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    oAjax.onreadystatechange = function() {
+        if (oAjax.readyState == 4 && oAjax.status == 200) {
+            var data = JSON.parse(oAjax.responseText);
+        } else {
+
+        }
+    };
+    oAjax.send('a=1');*/
+    // 禁用右键菜单
+    document.oncontextmenu = function(){
+        return false;
+    }
+    // 在本网页的任何键盘敲击事件都是无效操作 （防止F12和shift+ctrl+i调起开发者工具）
+    window.onkeydown = window.onkeyup = window.onkeypress = function () {
+        window.event.returnValue = false;
+        return false;
+    }
+    // 禁用开发者工具F12
+    document.onkeydown = function () {
+        if (window.event && window.event.keyCode == 123) {
+            event.keyCode = 0;
+            event.returnValue = false;
+            return false;
+        }
+    }
+</script>
+
 </html>
